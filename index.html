@@ -9,7 +9,7 @@
     <div>Hi there!</div>
 
     <script>
-        window.addEventListener('custom-message', function(data) {
+        window.addEventListener('message', function(data) {
             console.log(`Message recieved. Contents: ${data.toString()}`);
             // alert(`I have recieved a message!! It says: ${data.toString()}`);
             data.source.postMessage('Message received', data.origin);
