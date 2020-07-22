@@ -7,5 +7,14 @@
 </head>
 <body>
     <div>Hi there!</div>
+
+    <script>
+        window.addEventListener('message', function(data) {
+            console.log(`Message recieved. Contents: ${data}`);
+            alert(`I have recieved a message!! It says: ${data}`);
+        })
+    </script>
+
 </body>
 </html>
+
