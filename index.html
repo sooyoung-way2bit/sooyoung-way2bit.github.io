@@ -6,13 +6,21 @@
     <title>PostMessage Test</title>
 </head>
 <body>
-    <div>Hi there!</div>
+
+    <div id="div1">Hi there!</div>
 
     <script>
         window.addEventListener('message', function(data) {
             if(data && data.origin && (data.origin.includes("localhost") || data.origin.includes("127.0.0.1") ) ){
+
+
+
                 console.log(`Message recieved. Contents: ${data.toString()}`);
                 alert(`Message recieved. Contents: ${data.toString()}`);
+
+                let div = document.getElementById( 'div1' );
+                let curr = div.innerHTML;
+                div.innerHTML = curr + data
                 // alert(`I have recieved a message!! It says: ${data.toString()}`);
                 // data.source.postMessage('Message received', data.origin);
             }
